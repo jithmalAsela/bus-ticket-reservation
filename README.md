@@ -1,4 +1,4 @@
-# 🚌 Bus Ticket Reservation System
+# Bus Ticket Reservation System
 
 A simple bus reservation REST API built with **Java 17**, **Servlets**, and **Gson**.  
 The system manages a bus with configurable seats, stops, and prices.
@@ -11,7 +11,7 @@ All data is stored **in-memory**, and configuration is externalized in `config.p
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Check Availability**
   - Returns number of available seats and total price for a given route.
@@ -36,7 +36,7 @@ All data is stored **in-memory**, and configuration is externalized in `config.p
 
 ---
 
-## 🛠 Technologies
+## Technologies
 
 - Java 17  
 - Maven 3.8+  
@@ -47,7 +47,7 @@ All data is stored **in-memory**, and configuration is externalized in `config.p
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 bus-reservation/
 ├── pom.xml
@@ -72,7 +72,7 @@ bus-reservation/
 
 
 
-## ⚙️ Configuration (`config.properties`)
+## Configuration (`config.properties`)
 
 Place this file in:
 
@@ -102,7 +102,9 @@ stops → Ordered list of stops
 price.X-Y → Ticket price from X to Y
 (Reverse direction handled automatically)
 
-📦 Building the WAR
+---
+
+Building the WAR
 Prerequisites
 Java 17
 
@@ -113,7 +115,10 @@ mvn clean package
 Output:
 
 target/bus-reservation.war
-🚀 Deploying to Tomcat
+
+---
+
+Deploying to Tomcat
 Copy the WAR file into:
 
 <TOMCAT_HOME>/webapps/
@@ -128,14 +133,17 @@ bin\startup.bat
 Access the application:
 
 http://localhost:8080/bus-reservation
-🔌 REST API Endpoints
+
+---
+
+REST API Endpoints
 All endpoints:
 
 Method: POST
 
 Header: Content-Type: application/json
 
-1️⃣ Check Availability
+1 Check Availability
 URL
 
 /api/checkAvailability
@@ -157,7 +165,8 @@ Error Response (400)
 {
   "error": "Invalid route: A → A"
 }
-2️⃣ Reserve Tickets
+
+2 Reserve Tickets
 URL
 
 /api/reserveTickets
@@ -183,5 +192,8 @@ Error Response (400)
 {
   "error": "Not enough seats available."
 }
-🧪 Running Tests
+
+---
+
+Running Tests
 mvn test
