@@ -52,21 +52,21 @@ All data is stored **in-memory**, and configuration is externalized in `config.p
 bus-reservation/
 ├── pom.xml
 ├── src/
-│ ├── main/
-│ │ ├── java/com/lk/busreservation/
-│ │ │ ├── config/BusConfig.java
-│ │ │ ├── model/
-│ │ │ │ ├── AvailabilityRequest.java
-│ │ │ │ ├── AvailabilityResponse.java
-│ │ │ │ ├── Reservation.java
-│ │ │ │ ├── ReservationRequest.java
-│ │ │ │ └── ReservationResponse.java
-│ │ │ ├── service/BusService.java
-│ │ │ └── servlet/
-│ │ │ ├── CheckAvailabilityServlet.java
-│ │ │ └── ReserveTicketsServlet.java
-│ │ └── resources/config.properties
-│ └── test/java/com/lk/busreservation/service/BusServiceTest.java
+│   ├── main/
+│   │   ├── java/com/lk/busreservation/
+│   │   │   ├── config/BusConfig.java
+│   │   │   ├── model/
+│   │   │   │   ├── AvailabilityRequest.java
+│   │   │   │   ├── AvailabilityResponse.java
+│   │   │   │   ├── Reservation.java
+│   │   │   │   ├── ReservationRequest.java
+│   │   │   │   └── ReservationResponse.java
+│   │   │   ├── service/BusService.java
+│   │   │   └── servlet/
+│   │   │       ├── CheckAvailabilityServlet.java
+│   │   │       └── ReserveTicketsServlet.java
+│   │   └── resources/config.properties
+│   └── test/java/com/lk/busreservation/service/BusServiceTest.java
 └── README.md
 
 
