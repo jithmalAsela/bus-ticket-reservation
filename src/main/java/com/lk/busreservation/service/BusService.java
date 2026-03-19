@@ -137,7 +137,7 @@ public class BusService {
         String o = origin.toUpperCase();
         String d = destination.toUpperCase();
         if (!stopOrder.containsKey(o) || !stopOrder.containsKey(d) || o.equals(d)) {
-            throw new IllegalArgumentException("Invalid route: " + origin + " → " + destination);
+            throw new IllegalArgumentException("Invalid route: " + origin + " to " + destination);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.lk.busreservation.servlet;
 
 import com.google.gson.Gson;
+import com.lk.busreservation.config.BusConfig;
 import com.lk.busreservation.model.AvailabilityRequest;
 import com.lk.busreservation.model.AvailabilityResponse;
 import com.lk.busreservation.service.BusService;
@@ -26,9 +27,12 @@ public class CheckAvailabilityServlet extends HttpServlet {
         try {
             String body = new String(req.getInputStream().readAllBytes());
             AvailabilityRequest request = gson.fromJson(body, AvailabilityRequest.class);
+            int totalSeats = BusConfig.getInstance().getTotalSeats();
 
             if (request.getPassengerCount() <= 0) {
                 throw new IllegalArgumentException("Passenger count must be positive.");
+            } else if(request.getPassengerCount() > totalSeats) {
+                throw new IllegalArgumentException("Passenger count cannot exceed total seats (" + totalSeats + ").");
             }
 
             int available = service.getAvailableSeats(request.getOrigin(), request.getDestination());

@@ -101,6 +101,9 @@ price.A-D = 150
 price.B-C = 50
 price.B-D = 100
 price.C-D = 50
+
+```
+
 Explanation:
 totalSeats → Total number of seats (must be divisible by seatsPerRow)
 
@@ -110,10 +113,11 @@ stops → Ordered list of stops
 
 price.X-Y → Ticket price from X to Y
 (Reverse direction handled automatically)
-```
+
 ---
 
 Building the WAR
+```text
 Prerequisites
 Java 17
 
@@ -124,10 +128,11 @@ mvn clean package
 Output:
 
 target/bus-reservation.war
-
+```
 ---
 
 Deploying to Tomcat
+```text
 Copy the WAR file into:
 
 <TOMCAT_HOME>/webapps/
@@ -139,6 +144,8 @@ bin/startup.sh
 Windows
 
 bin\startup.bat
+
+```
 Access the application:
 
 http://localhost:8080/bus-reservation
@@ -151,11 +158,12 @@ All endpoints:
 Method: POST
 
 Header: Content-Type: application/json
-
+```text
 1 Check Availability
-URL
+URL: /api/checkAvailability
 
-/api/checkAvailability
+eg.: http://localhost:8080/bus-reservation/api/checkAvailability
+
 Request
 
 {
@@ -163,6 +171,7 @@ Request
   "origin": "A",
   "destination": "D"
 }
+
 Success Response (200)
 
 {
@@ -174,11 +183,13 @@ Error Response (400)
 {
   "error": "Invalid route: A → A"
 }
-
+```
+```text
 2 Reserve Tickets
-URL
+URL : /api/reserveTickets
 
-/api/reserveTickets
+eg.: http://localhost:8080/bus-reservation/api/reserveTickets
+
 Request
 
 {
@@ -187,6 +198,7 @@ Request
   "destination": "D",
   "priceConfirmation": 300.0
 }
+
 Success Response (200)
 
 {
@@ -201,8 +213,9 @@ Error Response (400)
 {
   "error": "Not enough seats available."
 }
-
+```
 ---
 
 Running Tests
+```text
 mvn test
