@@ -49,28 +49,34 @@ All data is stored **in-memory**, and configuration is externalized in `config.p
 
 ## Project Structure
 
+```text
 bus-reservation/
 ├── pom.xml
 ├── src/
 │   ├── main/
 │   │   ├── java/com/lk/busreservation/
-│   │   │   ├── config/BusConfig.java
+│   │   │   ├── config/
+│   │   │   │   └── BusConfig.java
 │   │   │   ├── model/
 │   │   │   │   ├── AvailabilityRequest.java
 │   │   │   │   ├── AvailabilityResponse.java
 │   │   │   │   ├── Reservation.java
 │   │   │   │   ├── ReservationRequest.java
 │   │   │   │   └── ReservationResponse.java
-│   │   │   ├── service/BusService.java
+│   │   │   ├── service/
+│   │   │   │   └── BusService.java
 │   │   │   └── servlet/
 │   │   │       ├── CheckAvailabilityServlet.java
 │   │   │       └── ReserveTicketsServlet.java
-│   │   └── resources/config.properties
-│   └── test/java/com/lk/busreservation/service/BusServiceTest.java
+│   │   └── resources/
+│   │       └── config.properties
+│   └── test/
+│       └── java/com/lk/busreservation/service/
+│           └── BusServiceTest.java
 └── README.md
+```
 
-
-
+---
 
 ## Configuration (`config.properties`)
 
@@ -82,8 +88,11 @@ src/main/resources/
 ### Example:
 
 properties
+```text
 totalSeats = 40
+
 seatsPerRow = 4
+
 stops = A, B, C, D
 
 price.A-B = 50
@@ -101,7 +110,7 @@ stops → Ordered list of stops
 
 price.X-Y → Ticket price from X to Y
 (Reverse direction handled automatically)
-
+```
 ---
 
 Building the WAR

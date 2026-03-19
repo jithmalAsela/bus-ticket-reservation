@@ -38,7 +38,7 @@ public class BusServiceTest {
         assertEquals(40, service.getAvailableSeats("A", "B"));
         assertEquals(40, service.getAvailableSeats("B", "C"));
         assertEquals(40, service.getAvailableSeats("C", "D"));
-        assertEquals(40, service.getAvailableSeats("D", "C")); // return
+        assertEquals(40, service.getAvailableSeats("D", "C"));
     }
 
     @Test
@@ -54,8 +54,7 @@ public class BusServiceTest {
         // Availability for B->C (segment 1) also 38
         assertEquals(38, service.getAvailableSeats("B", "C"));
 
-        // Availability for A->C (segments 0+1) also 38? Actually those 2 seats are occupied on both,
-        // so they are not available for A->C. So total 38 free for A->C as well.
+        // Availability for A->C (segments 0+1) also 38
         assertEquals(38, service.getAvailableSeats("A", "C"));
 
         // Reserve 1 seat from B->D (segments 1 and 2)
